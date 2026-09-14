@@ -20,7 +20,9 @@ jobs:
             -project WebDriverAgent.xcodeproj \
             -scheme WebDriverAgentRunner \
             -destination "generic/platform=iOS" \
-            -derivedDataPath build
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO
 
       - name: Package to IPA
         run: |
@@ -33,3 +35,4 @@ jobs:
         with:
           name: WebDriverAgentRunner-IPA
           path: WebDriverAgentRunner.ipa
+     
